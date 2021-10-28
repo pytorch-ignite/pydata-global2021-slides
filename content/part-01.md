@@ -2,374 +2,129 @@
 weight = 1
 +++
 
-
 <!-- Start vertical slides -->
 {{% section %}}
 
-# PyTorch in a nutshell
+# About "PyTorch-Ignite" project
 
-<table style="font-size: 20px;">
-<tr>
+Community-driven open source and _NumFOCUS Affiliated_ Project
 
-<td>
+maintained by volunteers in the PyTorch community:
 
-```python
-import torch
-import torch.nn as nn
-
-device = "cuda"
-
-class MyNN(nn.Module):
-    def __init__(self):
-        super(MyNN, self).__init__()
-        self.flatten = nn.Flatten()
-        self.linear_relu_stack = nn.Sequential(
-            nn.Linear(28*28, 512),
-            nn.ReLU(),
-            nn.Linear(512, 512),
-            nn.ReLU(),
-            nn.Linear(512, 10)
-        )
-
-    def forward(self, x):
-        x = self.flatten(x)
-        logits = self.linear_relu_stack(x)
-        return logits
-
-model = MyNN().to(device)
+```
+@vfdev-5, @ydcjeff, @KickItLikeShika, @sdesrozis, @alykhantejani, @anmolsjoshi,
+@trsvchn, @fco-dv, @Priyansi, @Moh-Yakoub, @gucifer, @Ishan-Kumar2 ...
 ```
 
-</td>
+![o1](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-medium/1f389@2x.png)
+![o2](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-medium/1f44f@2x.png)
+![o3](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-medium/1f64f@2x.png)
 
-<td>
+
+With the support of:
+
+<img width="150" src="https://numfocus.org/wp-content/uploads/2017/07/NumFocus_LRG.png">
+
+<img width="150" src="https://raw.githubusercontent.com/Quansight-Labs/quansight-labs-site/master/files/images/QuansightLabs_logo_V2.png">
+
+<img width="150" src="https://raw.githubusercontent.com/pytorch-ignite/pytorch-ignite.ai/main/static/_images/ifpen.png">
+
+<img width="80" src="https://d1.awsstatic.com/logos/aws-logo/full-color/AWS-Logo_Full-Color_1000x600.23165eb2b9af9cc8e068e74fbabc28222d091298.png">
+
+<img width="150" src="https://raw.githubusercontent.com/pytorch-ignite/pytorch-ignite.ai/main/static/_images/agenium_space.png">
+
+
+---
+
+# Projects using PyTorch-Ignite
+
+- Research Papers
+- Blog articles, tutorials, books
+- Toolkits
+  - [Project MONAI](https://monai.io/), [Nussl](https://nussl.github.io/docs/), ...
+
+More details here: https://pytorch-ignite.ai/ecosystem/
+
+---
+
+# Community Engagement
+
+<div style="font-size: 24px;">
+
+- Google Summer of Code 2021
+  - Mentored two great students (_Ahmed_ and _Arpan_)
+
+- Google Season of Docs 2021
+  - Working with great tech writer (_Priyansi_)
+
+- Hacktoberfest 2020 and 2021
+
+- PyData Global Mentored Sprint 2020 and 2021
+
+- Our [new website](https://pytorch-ignite.ai) development
+
+- [PyTorch-Ignite Code-Generator project](https://code-generator.pytorch-ignite.ai)
+
+- Public meetings on Discord, open to everyone
+
+_Stay tuned for upcoming events ..._
+
+<img width="50" src="https://summerofcode.withgoogle.com/static/img/summer-of-code-logo.svg">
+<img width="50" src="https://developers.google.com/season-of-docs/images/SeasonofDocs_Icon_Grey_300ppi_trimmed_480.png">
+<img width="50" src="https://hacktoberfestswaglist.com/img/Hacktoberfest_21.jpg">
+<img width="150" src="https://pydata.org/global2021/wp-content/uploads/2021/06/logo.png">
+
+</div>
+
+---
+
+# <img width="50" src="https://hacktoberfestswaglist.com/img/Hacktoberfest_21.jpg"> [Hacktoberfest 2021](https://hacktoberfest.digitalocean.com/) <img width="50" src="https://hacktoberfestswaglist.com/img/Hacktoberfest_21.jpg">
+
+
+
+The repositories participating:
+- PyTorch-Ignite: https://github.com/pytorch/ignite
+- Code Generator: https://github.com/pytorch-ignite/code-generator
+- Examples: https://github.com/pytorch-ignite/examples
 
 {{< add_vspace >}}
 
-- tensor manipulations (device: CPUs, GPUs, TPUs)
-- NN components, optimizers, loss functions
-- Distributed computations
-- Profiling
-- other cool features ...
-- Domain libraries: vision, text, audio
-- Rich ecosystem
+How it works:
+<div style="font-size: 22px;">
 
-</td>
-
-</tr>
-
-</table>
-
-https://pytorch.org/tutorials/beginner/basics/intro.html
-
----
-
-# Quick-start ML with PyTorch
-
-<div style="font-size: 20px;">
-
-[Computer Vision example with Fashion MNIST](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html)
-
-Problem: 1 - how to classify images ?
-
-`model(image) -> predicted label`
-
-2 - How measure model performances ?
-
-`predicted labels vs correct labels`
-
-
-<img height="300" src="https://image.itmedia.co.jp/ait/articles/2005/28/di-01.gif" />
-
----
-
-# Quick-start ML with PyTorch
-
-<div style="font-size: 20px;">
-
-- Setup training and testing data
-
-```python
-from torch.utils.data import DataLoader
-from torchvision import datasets
-from torchvision.transforms import ToTensor, Lambda, Compose
-
-# Setup training/test data
-training_data = datasets.FashionMNIST(root="data", train=True, download=True, transform=ToTensor())
-test_data = datasets.FashionMNIST(root="data", train=False, transform=ToTensor())
-
-batch_size = 64
-
-# Create data loaders
-train_dataloader = DataLoader(training_data, batch_size=batch_size)
-test_dataloader = DataLoader(test_data, batch_size=batch_size)
-
-# Optionally, for debugging:
-for X, y in test_dataloader:
-    print("Shape of X [N, C, H, W]: ", X.shape)
-    print("Shape of y: ", y.shape, y.dtype)
-    break
-
-# Output:
-# Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
-# Shape of y:  torch.Size([64]) torch.int64
-```
-
-</div>
-
-
----
-
-# Quick-start ML with PyTorch
-
-<div style="font-size: 20px;">
-
-- Create a model
-
-```python
-import torch
-from torch import nn
-
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
-class NeuralNetwork(nn.Module):
-    def __init__(self):
-        super(NeuralNetwork, self).__init__()
-        self.flatten = nn.Flatten()
-        self.linear_relu_stack = nn.Sequential(
-            nn.Linear(28*28, 512),
-            nn.ReLU(),
-            nn.Linear(512, 512),
-            nn.ReLU(),
-            nn.Linear(512, 10)
-        )
-
-    def forward(self, x):
-        x = self.flatten(x)
-        logits = self.linear_relu_stack(x)
-        return logits
-
-model = NeuralNetwork().to(device)
-```
+- Read our project's Contributing Guidelines
+- Check out and pick an issue from the list of "Help-wanted" issues
+  - Comment out that you would like to tackle the issue
+- Any questions on the issue => reach out to us on GH or Discord for more guidance
 
 </div>
 
 ---
 
-# Quick-start ML with PyTorch
+# Join the PyTorch-Ignite Community
 
-<div style="font-size: 20px;">
 
-- Model training
-  - Loss function: cross-entropy
-  - Optimization with Stochastic Gradient Descent
+We are looking for motivated contributors to help out with the project.
 
-```python
-loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+![o1](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-small/1f3c5@2x.png)
+Everyone is welcome to contribute
+![o2](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-small/1f4af@2x.png)
 
-def train(dataloader, model, loss_fn, optimizer):
-    model.train()
-    for X, y in dataloader:
-        X, y = X.to(device), y.to(device)
-        pred = model(X)
-        loss = loss_fn(pred, y)
+<a class="level-item" href="https://www.github.com/pytorch/ignite">
+    <span class="icon"><i class="fab fa-github"></i></span>
+</a>
 
-        # Backpropagation
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+<a class="level-item" href="https://discord.gg/djZtm3EmKj">
+    <span class="icon"><i class="fab fa-discord"></i></span>
+</a>
 
-def test(dataloader, model, loss_fn):
-    # code to compute and print average loss and accuracy
+{{< add_vspace >}}
 
-epochs = 5
-for t in range(epochs):
-    print(f"Epoch {t+1}\n-------------------------------")
-    train(train_dataloader, model, loss_fn, optimizer)
-    test(test_dataloader, model, loss_fn)
-print("Done!")
-```
+#### How to start:
 
-</div>
-
-
-
----
-
-## Why using PyTorch without Ignite is suboptimal ?
-
-For NN training and evaluation:
-- PyTorch gives only "low"-level building components
-- Common bricks to code in any user project:
-  - metrics
-  - checkpointing, best model saving, early stopping, ...
-  - logging to experiment tracking systems
-  - code adaptation for device (e.g. GPU, XLA)
-
----
-
-- Pure PyTorch code
-
-<div style="font-size: 20px;">
-
-```python
-
-model = Net()
-train_loader, val_loader = get_data_loaders(train_batch_size, val_batch_size)
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.8)
-criterion = torch.nn.NLLLoss()
-
-max_epochs = 10
-validate_every = 100
-checkpoint_every = 100
-
-
-def validate(model, val_loader):
-    model = model.eval()
-    num_correct = 0
-    num_examples = 0
-    for batch in val_loader:
-        input, target = batch
-        output = model(input)
-        correct = torch.eq(torch.round(output).type(target.type()), target).view(-1)
-        num_correct += torch.sum(correct).item()
-        num_examples += correct.shape[0]
-    return num_correct / num_examples
-
-
-def checkpoint(model, optimizer, checkpoint_dir):
-    # ...
-
-def save_best_model(model, current_accuracy, best_accuracy):
-    # ...
-
-iteration = 0
-best_accuracy = 0.0
-
-for epoch in range(max_epochs):
-    for batch in train_loader:
-        model = model.train()
-        optimizer.zero_grad()
-        input, target = batch
-        output = model(input)
-        loss = criterion(output, target)
-        loss.backward()
-        optimizer.step()
-
-        if iteration % validate_every == 0:
-            binary_accuracy = validate(model, val_loader)
-            print("After {} iterations, binary accuracy = {:.2f}"
-                  .format(iteration, binary_accuracy))
-            save_best_model(model, binary_accuracy, best_accuracy)
-
-        if iteration % checkpoint_every == 0:
-            checkpoint(model, optimizer, checkpoint_dir)
-        iteration += 1
-
-```
-
-</div>
-
----
-
-# PyTorch-Ignite: what and why? 🤔
-
-> High-level **library** to help with training and evaluating neural networks in PyTorch flexibly and transparently.
-
-- https://github.com/pytorch/ignite
-
-
-<table style="font-size: 20px;">
-<tr>
-
-<td>
-
-```python
-
-def train_step(engine, batch):
-  #  ... any training logic ...
-  return batch_loss
-
-trainer = Engine(train_step)
-
-# Compose your pipeline ...
-
-trainer.run(train_loader, max_epochs=100)
-
-
-```
-</td>
-
-<td>
-
-```python
-
-metrics = {
-  "precision": Precision(),
-  "recall": Recall()
-}
-
-evaluator = create_supervised_evaluator(
-  model,
-  metrics=metrics
-)
-
-
-```
-</td>
-
-<td>
-
-```python
-@trainer.on(Events.EPOCH_COMPLETED)
-def run_evaluation():
-  evaluator.run(test_loader)
-
-handler = ModelCheckpoint(
-  '/tmp/models', 'checkpoint'
-)
-trainer.add_event_handler(
-  Events.EPOCH_COMPLETED,
-  handler,
-  {'model': model}
-)
-```
-</td>
-
-</tr>
-
-</table>
-
----
-
-
-# Key concepts in a nutshell
-
-#### PyTorch-Ignite is about:
-
-1) Engine and Event System
-2) Out-of-the-box metrics to easily evaluate models
-3) Built-in handlers to compose training pipeline
-4) Distributed Training support
-
----
-
-# What makes PyTorch-Ignite unique ?
-
-- Composable and interoperable components
-- Simple and understandable code
-- Open-source community involvement
-
----
-
-# How PyTorch-Ignite makes user's live easier ?
-
-With PyTorch-Ignite:
-
-- Less code than pure PyTorch while ensuring maximum control and simplicity
-- Easily get more refactored and structured code
-- Extensible API for metrics, experiment managers, and other components
-- Same code for non-distributed and distributed configs
+- Read our [Contributing guides](https://github.com/pytorch/ignite/blob/master/CONTRIBUTING.md)
+- Pick [List of Help-wanted GH issues](https://github.com/pytorch/ignite/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+- Reach out to us on GH or Discord for more guidance
 
 <!-- End vertical slides -->
 {{% /section %}}

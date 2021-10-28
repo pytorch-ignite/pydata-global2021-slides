@@ -7,20 +7,32 @@ src = "https://raw.githubusercontent.com/pytorch/ignite/master/assets/logo/ignit
 +++
 
 
-# PyTorch-Ignite
-> Training and evaluating neural networks
-> flexibly and transparently
+# PyData Global Sprint
 
-Priyansi & Ahmed & François & Victor
+## PyTorch-Ignite
+
+> High-level library to help with training and evaluating neural networks in PyTorch flexibly and transparently.
 
 {{< social >}}
 
 {{< add_vspace >}}
+
+<div class="center">
+
+```python
+if __name__ == "__main__":
+    print("Let's have fun helping PyTorch-Ignite open source project !")
+```
+
+</div>
+
 {{< add_vspace >}}
 
-Slides:
+Slides: https://pytorch-ignite.github.io/pydata-global2021-slides/
 
 ---
+
+## Maintainers leading the sprint
 
 <table class="center">
 <tr>
@@ -31,9 +43,38 @@ Slides:
 Priyansi <a href="https://github.com/Priyansi">@Priyansi</a>
 </td>
 <td style="font-size: 20px;">
-CS Undergrad working on revamping PyTorch-Ignite's docs and managing the community
+A CS Undergrad. Currently working on the docs of PyTorch-Ignite
+
+and helping manage the community
 </td>
 </tr>
+
+<tr>
+<td>
+<img width=80 src="https://avatars.githubusercontent.com/u/32727188?v=4" />
+</td>
+<td>
+Jeff Yang<a href="https://github.com/ydcjeff">@ydcjeff</a>
+</td>
+<td style="font-size: 20px;">
+Contributor to PyTorch-Ignite and its related projects
+</td>
+</tr>
+
+<tr>
+<td>
+<img width=80 src="https://avatars.githubusercontent.com/u/54319724?v=4" />
+</td>
+<td>
+Ahmed <a href="https://github.com/KickItLikeShika">@KickItLikeShika</a>
+</td>
+<td style="font-size: 20px;">
+A CS Undergrad and a Machine Learning Intern at Factmata working on NLP
+
+and contributor to PyTorch-Ignite.
+</td>
+</tr>
+
 <tr>
 <td>
 <img width=80 src="https://avatars.githubusercontent.com/u/2459423?v=4" />
@@ -46,28 +87,14 @@ Software Engineer at <a href="https://www.quansight.com/">Quansight</a> working 
 </td>
 </tr>
 
-<tr>
-<td>
-<img width=80 src="https://avatars.githubusercontent.com/u/30748114?v=4" />
-</td>
-<td>
-Taras <a href="https://github.com/trsvchn">@trsvchn</a>
-</td>
-<td style="font-size: 20px;">
-OpenSource Enthusiast with MS degree in Biology
-</td>
-</tr>
-
 </table>
-
-
 
 ---
 
 # Content
 
-0. What is _PyTorch_ ?
-1. What is _PyTorch-Ignite_ ?
-2. Quick-start _PyTorch-Ignite_ example
-3. Convert PyTorch to PyTorch+Ignite
-4. About the _PyTorch-Ignite_ project
+1. About the _PyTorch-Ignite_ project
+2. What are _PyTorch_ and _PyTorch-Ignite_ ?
+3. Quick-start _PyTorch-Ignite_ example
+4. How you can help ?
+
