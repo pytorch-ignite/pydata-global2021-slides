@@ -33,18 +33,6 @@ With the support of:
 
 <img width="150" src="https://raw.githubusercontent.com/pytorch-ignite/pytorch-ignite.ai/main/static/_images/agenium_space.png">
 
-
----
-
-# Projects using PyTorch-Ignite
-
-- Research Papers
-- Blog articles, tutorials, books
-- Toolkits
-  - [Project MONAI](https://monai.io/), [Nussl](https://nussl.github.io/docs/), ...
-
-More details here: https://pytorch-ignite.ai/ecosystem/
-
 ---
 
 # Community Engagement
@@ -59,11 +47,7 @@ More details here: https://pytorch-ignite.ai/ecosystem/
 
 - Hacktoberfest 2020 and 2021
 
-- PyData Global Mentored Sprint 2020 and 2021
-
-- Our [new website](https://pytorch-ignite.ai) development
-
-- [PyTorch-Ignite Code-Generator project](https://code-generator.pytorch-ignite.ai)
+- **PyData Global Mentored Sprint 2020 and 2021**
 
 - Public meetings on Discord, open to everyone
 
@@ -75,56 +59,6 @@ _Stay tuned for upcoming events ..._
 <img width="150" src="https://pydata.org/global2021/wp-content/uploads/2021/06/logo.png">
 
 </div>
-
----
-
-# <img width="50" src="https://hacktoberfestswaglist.com/img/Hacktoberfest_21.jpg"> [Hacktoberfest 2021](https://hacktoberfest.digitalocean.com/) <img width="50" src="https://hacktoberfestswaglist.com/img/Hacktoberfest_21.jpg">
-
-
-
-The repositories participating:
-- PyTorch-Ignite: https://github.com/pytorch/ignite
-- Code Generator: https://github.com/pytorch-ignite/code-generator
-- Examples: https://github.com/pytorch-ignite/examples
-
-{{< add_vspace >}}
-
-How it works:
-<div style="font-size: 22px;">
-
-- Read our project's Contributing Guidelines
-- Check out and pick an issue from the list of "Help-wanted" issues
-  - Comment out that you would like to tackle the issue
-- Any questions on the issue => reach out to us on GH or Discord for more guidance
-
-</div>
-
----
-
-# Join the PyTorch-Ignite Community
-
-
-We are looking for motivated contributors to help out with the project.
-
-![o1](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-small/1f3c5@2x.png)
-Everyone is welcome to contribute
-![o2](https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-small/1f4af@2x.png)
-
-<a class="level-item" href="https://www.github.com/pytorch/ignite">
-    <span class="icon"><i class="fab fa-github"></i></span>
-</a>
-
-<a class="level-item" href="https://discord.gg/djZtm3EmKj">
-    <span class="icon"><i class="fab fa-discord"></i></span>
-</a>
-
-{{< add_vspace >}}
-
-#### How to start:
-
-- Read our [Contributing guides](https://github.com/pytorch/ignite/blob/master/CONTRIBUTING.md)
-- Pick [List of Help-wanted GH issues](https://github.com/pytorch/ignite/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-- Reach out to us on GH or Discord for more guidance
 
 <!-- End vertical slides -->
 {{% /section %}}

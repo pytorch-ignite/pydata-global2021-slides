@@ -1,5 +1,5 @@
 +++
-weight = 2
+weight = 3
 +++
 
 <!-- Start vertical slides -->
