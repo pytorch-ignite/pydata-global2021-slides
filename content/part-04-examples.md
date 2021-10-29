@@ -29,7 +29,9 @@ Participating GitHub repositories:
 
 ## Contributing guidelines:
 
-- Setup Jupyter Notebook with PyTorch and PyTorch-Ignite installed
+- Setup Jupyter Lab/Notebook with PyTorch and PyTorch-Ignite installed
+    - https://pytorch.org/get-started/locally/
+    - `pip install pytorch-ignite`
 
 {{< add_vspace >}}
 

@@ -69,7 +69,7 @@ Contributor to PyTorch-Ignite and its related projects
 Ahmed <a href="https://github.com/KickItLikeShika">@KickItLikeShika</a>
 </td>
 <td style="font-size: 20px;">
-A CS Undergrad and a Machine Learning Intern at Factmata working on NLP
+A CS Undergrad and a Machine Learning Intern at <a href="https://factmata.com/">Factmata</a> working on NLP
 
 and contributor to PyTorch-Ignite.
 </td>
