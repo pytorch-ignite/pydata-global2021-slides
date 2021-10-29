@@ -25,7 +25,18 @@ Participating GitHub repositories:
 
 ---
 
-# Start contributing
+# Start contributing (1/2)
+
+**Your feedback is valuable!**
+
+- Check out our new site: https://pytorch-ignite.ai/
+- Open an issue if see a typo, something is not clear, etc
+    - https://github.com/pytorch-ignite/examples/issues
+    - https://github.com/pytorch-ignite/pytorch-ignite.ai/issues
+
+---
+
+# Start contributing (2/2)
 
 ## Contributing guidelines:
 
@@ -38,7 +49,6 @@ Participating GitHub repositories:
 ## Help-wanted issues:
 
 - https://github.com/pytorch-ignite/examples/issues?q=is%3Aissue+is%3Aopen+label%3APyDataGlobal2021
-
 
 
 <!-- End vertical slides -->
